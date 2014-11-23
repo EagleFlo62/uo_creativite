@@ -1,0 +1,11 @@
+{
+  "name": "creativite",
+  "version": "0.0.1",
+  "description": "ProjetUO",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Florian",
+  "license": "ISC"
+}
