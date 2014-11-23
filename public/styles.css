@@ -1,0 +1,239 @@
+@font-face{
+	src:url(modernpics.otf);
+	font-family: 'picto';
+}
+
+html, body{
+	height: 100%;
+	overflow: hidden;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	background: url(images/background.jpg) center top;
+}
+
+p{
+	margin:0;
+	padding: 0;
+}
+
+input{
+	height: 50px;
+	width: 320px;
+	background:#fafafa;
+	font-size: 17px;
+	font-family: 'Roboto';
+	border: 0;
+	outline: 0;
+	padding: 0 10px;
+}
+
+/* Layers ------------ *
+ * +++++++++++++++++++ */
+
+#input, #send{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#input{
+	position: fixed;
+	left:-340px;
+	z-index: 10;
+	-webkit-transition: all 0.5s;
+	transition:all 0.5s;
+}
+
+#input:hover{
+	left:0;
+}
+
+#input:hover #send{
+	background:#0a5bc4;
+	color:#fafafa;
+}
+
+#send{
+	border-radius: 0 20px 20px 0;
+	text-align: center;
+	color: #0a5bc4;
+	line-height: 35px;
+	font-family: 'picto';
+	font-size: 40px;
+	margin-left: -4px;
+	background: #fafafa;
+	height: 50px;
+	width: 40px;
+	-webkit-transition:all 0.75s;
+	transition:all 0.75s;
+}
+
+#sky, #fixed_clouds, .clouds, .balloon{
+	position: absolute;
+}
+
+#sky, #fixed_clouds{
+	bottom: 0;
+	width : 100%;
+}
+
+#sky{
+	z-index: 1;
+	height: 319px;
+	background-image : url(images/sky.png);
+	background-repeat: repeat-x;
+	-webkit-animation: sky 80s infinite linear;
+	animation: sky 80s infinite linear;
+}
+
+.clouds{
+	z-index: 2;
+	background-repeat: no-repeat;
+}
+
+#fixed_clouds{
+	z-index: 9;
+	height: 100px;
+	background: url(images/fixed_clouds.png) no-repeat center;
+}
+
+#cloud1{
+	width : 260px;
+	height: 75px;
+	top : 8%;
+	left: 70px;
+	background-image: url(images/large.png);
+	-webkit-animation: cloud1 140s infinite linear;
+	animation: cloud1 140s infinite linear;
+}
+
+#cloud2, #cloud3{
+	width : 190px;
+	height: 55px;
+	background-image: url(images/medium.png)
+}
+
+#cloud2{
+	top : 18%;
+	right: 1140px;
+	-webkit-animation: cloud2 120s infinite linear;
+	animation: cloud2 120s infinite linear;
+}
+
+#cloud3{
+	top : 42%;
+	right: -50px;
+	-webkit-animation: cloud3 150s infinite linear;
+	animation: cloud3 150s infinite linear;
+}
+
+#cloud4{
+	width : 85px;
+	height: 35px;
+	top : 31%;
+	left: 700px;
+	background-image: url(images/small.png);
+	-webkit-animation: cloud4 100s infinite linear;
+	animation: cloud4 100s infinite linear;
+}
+
+.balloon{
+	z-index: 3;
+	width :  200px;
+	height: 267px;
+	bottom: -267px;
+}
+
+/* Messages----------- *
+ * +++++++++++++++++++ */
+
+.message{
+	display: inline-block;
+	position: absolute;
+	z-index: 4;
+	left: 170px;
+	top: 200px;
+	min-width: 100px;
+	max-width: 230px;
+	padding: 8px 10px;
+	background:#fcfcfc;
+	font-family: 'Roboto';
+	color: #202020;
+	border-radius: 8px;
+}
+
+.message span{
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0066FF;
+	margin-bottom: 4px;
+}
+
+.message p{
+	display: inline-block;
+}
+
+.message:before{
+	content:'';
+	position: absolute;
+	top:20px;
+	left:-6px;
+	border-top: 8px solid transparent;
+	border-right: 10px solid #fcfcfc;
+	border-bottom: 8px solid transparent;
+}
+
+/* Animation --------- *
+ * +++++++++++++++++++ */
+@-webkit-keyframes sky {
+    from {background-position: 0px 0px;}
+    to   {background-position: 1438px 0px;}
+}
+
+@keyframes sky {
+    from {background-position: 0px 0px;}
+    to   {background-position: 1438px 0px;}
+}
+
+@-webkit-keyframes cloud1 {
+    from {left: -260px;}
+    to   {left: 100%;}
+}
+
+@keyframes cloud1 {
+    from {left: -260px;}
+    to   {left: 100%;}
+}
+
+@-webkit-keyframes cloud2 {
+    from {right: -190px;}
+    to   {right: 100%;}
+}
+
+@keyframes cloud2 {
+    from {right: -190px;}
+    to   {right: 100%;}
+}
+
+@-webkit-keyframes cloud3 {
+    from {right: -190px;}
+    to   {right: 100%;}
+}
+
+@keyframes cloud3 {
+    from {right: -190px;}
+    to   {right: 100%;}
+}
+
+@-webkit-keyframes cloud4 {
+    from {left: -85px;}
+    to   {left: 100%;}
+}
+
+@keyframes cloud4 {
+    from {left: -85px;}
+    to   {left: 100%;}
+}
