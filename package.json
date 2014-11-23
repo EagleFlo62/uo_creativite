@@ -1,8 +1,0 @@
-{
-  "name": "creativite",
-  "version": "0.0.1",
-  "description": "Projet UO",
-  "start": "node server.js",
-  "author": "Florian",
-  "license": "ISC"
-}
