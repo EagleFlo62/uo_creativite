@@ -5,6 +5,9 @@ var server  = require('http').createServer(app);
 var io      = require('socket.io').listen(server);
 var path    = require('path');
 
+var ipaddr = process.env.OPENSHIFT_INTERNAL_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_INTERNAL_PORT || 8080;
+
 // Static files
 app.use(express.static(path.join(__dirname,'public')));
 
@@ -34,4 +37,4 @@ io.sockets.on('connection', function(socket){
 	});
 });
 
-server.listen(80);
+server.listen(port, ipaddr);
