@@ -12,7 +12,7 @@ var port = process.env.OPENSHIFT_INTERNAL_PORT || 8080;
 app.use(express.static(path.join(__dirname,'public')));
 
 // Routines
-app.get('/chat', function(req,res){
+app.get('/', function(req,res){
 	res.sendFile(path.join(__dirname, 'public', 'balloon.html'));
 })
 .use(function(req, res){
